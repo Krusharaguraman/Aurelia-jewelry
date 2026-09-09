@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 0 0% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    --primary: 43 65% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 30% 90%;
+    --secondary-foreground: 0 0% 13%;
+    --muted: 36 25% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 43 55% 85%;
+    --accent-foreground: 0 0% 13%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 43 65% 53%;
+    --chart-1: 43 65% 53%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 40 33% 90%;
+    --card: 0 0% 13%;
+    --card-foreground: 40 33% 90%;
+    --popover: 0 0% 13%;
+    --popover-foreground: 40 33% 90%;
+    --primary: 43 65% 53%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 40 33% 90%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 43 30% 25%;
+    --accent-foreground: 40 33% 90%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 65% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-charcoal/70 backdrop-blur-md border border-white/10;
+  }
+  .luxury-link {
+    @apply relative text-sm tracking-wide transition-colors duration-300 hover:text-primary;
+  }
+  .luxury-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300;
+  }
+  .luxury-link:hover::after {
+    @apply w-full;
+  }
+  .btn-luxury {
+    @apply relative overflow-hidden bg-gold-500 text-white px-8 py-3 text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-600;
+  }
+  .btn-outline-luxury {
+    @apply relative overflow-hidden border border-gold-500 text-gold-700 px-8 py-3 text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-500 hover:text-white;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
