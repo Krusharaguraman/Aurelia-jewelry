@@ -87,7 +87,7 @@ export function Hero() {
             <Link href="/store-locator">
               <Button
                 variant="outline"
-                className="border-white/40 text-white hover:bg-white hover:text-charcoal px-8 py-6 text-sm tracking-widest uppercase"
+                className="border-white/40 bg-white/90 text-charcoal hover:bg-charcoal hover:text-white px-8 py-6 text-sm tracking-widest uppercase"
               >
                 Visit Store
               </Button>
