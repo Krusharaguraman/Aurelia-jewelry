@@ -46,13 +46,15 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Aurelia',
   description: 'Premium handcrafted luxury jewelry including rings, bangles, necklaces, earrings, and bridal collections.',
-  url: 'https://aurelia-jewelry.com',
-  logo: 'https://aurelia-jewelry.com/logo.png',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
   telephone: CONTACT_PHONE,
   email: CONTACT_EMAIL,
   address: {
@@ -86,19 +88,19 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://aurelia-jewelry.com',
+      item: SITE_URL,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Collections',
-      item: 'https://aurelia-jewelry.com/collections',
+      item: `${SITE_URL}/collections`,
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Blog',
-      item: 'https://aurelia-jewelry.com/blog',
+      item: `${SITE_URL}/blog`,
     },
   ],
 };

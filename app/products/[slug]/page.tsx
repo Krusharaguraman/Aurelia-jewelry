@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 function ProductSchema({ product }: { product: any }) {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -44,7 +45,7 @@ function ProductSchema({ product }: { product: any }) {
       price: product.price,
       priceCurrency: 'INR',
       availability: product.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-      url: `https://aurelia-jewelry.com/products/${product.slug}`,
+      url: `${SITE_URL}/products/${product.slug}`,
     },
     aggregateRating: {
       '@type': 'AggregateRating',
